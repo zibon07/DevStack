@@ -83,7 +83,6 @@ const TechnologySection = () => {
                         <p className="tex-sm text-gray-600 mb-5"><span className="text-pink-600 font-bold">{selectedStack.length}</span> technology selected</p>
 
                         <div className="space-y-4">
-                            {/* Empty state - swap this out once you track selected items */}
                             {selectedStack.length == 0 ? (
                                 <div className="flex flex-col items-center justify-center text-center py-10 text-gray-400">
                                     <span className="text-2xl mb-2">+</span>
