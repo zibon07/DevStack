@@ -77,7 +77,7 @@ const TechnologySection = () => {
 
                 </div>
                 <div>
-                    <div className=" border border-gray-200 rounded-xl p-5 sticky top-6">
+                    <div className=" border border-gray-200 rounded-xl p-5 sticky top-20 z-4">
                         <h3 className="font-semibold text-gray-900 mb-4">Your Stack</h3>
 
                         <p className="tex-sm text-gray-600 mb-5"><span className="text-pink-600 font-bold">{selectedStack.length}</span> technology selected</p>

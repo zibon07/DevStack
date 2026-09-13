@@ -1,7 +1,7 @@
 export default function TechCard({ tech, addToStack, isAdded }) {
     return (
         <div
-            className={`border space-y-5 max-w-70 h-[285px] rounded-xl p-4 shadow-sm hover:shadow-lg transition-all duration-300 ${isAdded
+            className={`border space-y-5 max-w-70 h-71.25 rounded-xl p-4 shadow-sm hover:shadow-lg transition-all duration-300 ${isAdded
                     ? "border-green-500 ring-1 ring-green-200 bg-green-50/40"
                     : "border-gray-200"
                 }`}
