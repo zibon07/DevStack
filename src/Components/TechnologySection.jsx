@@ -1,7 +1,23 @@
+import { useEffect, useState } from "react";
 import StackSidebar from "./StackSidebar";
 import TechCard from "./TechCard";
 
 const TechnologySection = () => {
+
+    const [stack, setStack] = useState([])
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        fetch("../../public/TechStack.json")
+            .then(res => res.json())
+            .then(data=>{
+                setStack(data)
+                setLoading(false)
+            })
+    }, [])
+
+    if(loading) return <div>loading.......</div>
+
     return (
         <section className="max-w-300 mx-auto">
             <div className=" mx-auto mb-10">
@@ -17,13 +33,10 @@ const TechnologySection = () => {
             </div>
             <div className="flex flex-col md:flex-row  gap-6">
                 <div className="grid grid-cols  md:grid-cols-2 lg:grid-cols-3 gap-4 flex-1">
-                    <TechCard></TechCard>
-                    <TechCard></TechCard>
-                    <TechCard></TechCard>
-                    <TechCard></TechCard>
-                    <TechCard></TechCard>
-                    <TechCard></TechCard>
-                    <TechCard></TechCard>
+                    {
+                        stack.map(tech=> <TechCard key={tech.id} tech={tech}></TechCard>)
+                    }
+                    
                 </div>
                 <div>
                     <StackSidebar></StackSidebar>
