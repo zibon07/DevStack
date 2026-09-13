@@ -1,4 +1,4 @@
-export default function TechCard({tech}) {
+export default function TechCard({tech,addToStack}) {
     return (
         <div className="border border-gray-200 space-y-5 max-w-70 h-[285px] rounded-xl p-4 shadow-sm hover:shadow-md transition">
             <div className="flex items-center justify-between mb-3">
@@ -29,7 +29,7 @@ export default function TechCard({tech}) {
                 </span>
             </div>
 
-            <button className="mt-4 w-full py-2 rounded-lg bg-gray-900 text-white text-sm font-medium hover:bg-gray-800">
+            <button onClick={()=>addToStack(tech)} className="mt-4 w-full py-2 rounded-lg bg-gray-900 text-white text-sm font-medium hover:bg-gray-800">
                 Add to Stack
             </button>
         </div>
