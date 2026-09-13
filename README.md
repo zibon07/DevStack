@@ -62,6 +62,5 @@ Parent â†’ child: pass data as props (e.g. `<TechCard tech={tech} />`). Child â†
 =======
 
 
--git repository: [project-repo](https://github.com/zibon07/DevStack.git)
--project livelink: [project-livelink](https://zibons-devstack.netlify.app/)
+
 
