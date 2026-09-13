@@ -21,7 +21,7 @@ const TechnologySection = () => {
     if (loading) return <div>loading.......</div>
 
 
-    console.log(selectedStack);
+    // console.log(selectedStack);
     // console.log(stack)
 
     const addToStack = (tech) => {
@@ -29,13 +29,18 @@ const TechnologySection = () => {
         // const filteredTech = stack.filter(item => item.id === id)
         // console.log(filteredTech)
         const existedTech = selectedStack.find(item => item.id === tech.id)
-        console.log(existedTech);
+        // console.log(existedTech);
         if (existedTech) {
             alert("this tech already exist")
             return
         }
         setSelectedStack([...selectedStack, tech])
     }
+    const removeFromStack = (id) => {
+    setSelectedStack(selectedStack.filter(t => t.id !== id));
+};
+
+    const removeStack =()=>setSelectedStack([])
 
     return (
         <section className="max-w-300 mx-auto">
@@ -56,30 +61,47 @@ const TechnologySection = () => {
                         stack.map(tech => <TechCard
                             key={tech.id}
                             tech={tech}
-                            addToStack={addToStack}></TechCard>)
+                            addToStack={addToStack}
+                            isAdded={selectedStack.some(t => t.id === tech.id)}></TechCard>)
                     }
 
                 </div>
                 <div>
-
                     <div className=" border border-gray-200 rounded-xl p-5 sticky top-6">
                         <h3 className="font-semibold text-gray-900 mb-4">Your Stack</h3>
 
-                        {/* Empty state - swap this out once you track selected items */}
-                        {selectedStack.length == 0 ? (
-                            <div className="flex flex-col items-center justify-center text-center py-10 text-gray-400">
-                                <span className="text-2xl mb-2">+</span>
-                                <p className="text-sm">
-                                    Add technologies to build your ideal stack.
-                                </p>
-                            </div>
-                        ) :
-                            <StackSidebar></StackSidebar>
-                        }
+                        <p className="tex-sm text-gray-600 mb-5"><span className="text-pink-600 font-bold">{selectedStack.length}</span> technology selected</p>
+
+                        <div className="space-y-4">
+                            {/* Empty state - swap this out once you track selected items */}
+                            {selectedStack.length == 0 ? (
+                                <div className="flex flex-col items-center justify-center text-center py-10 text-gray-400">
+                                    <span className="text-2xl mb-2">+</span>
+                                    <p className="text-sm">
+                                        Add technologies to build your ideal stack.
+                                    </p>
+                                </div>
+                            ) :
+                                selectedStack.map(stack =>
+                                    <StackSidebar
+                                        key={stack.id}
+                                        stack={stack}
+                                        removeFromStack={removeFromStack}
+                                    ></StackSidebar>
+                                )
+                            }
+                            {selectedStack.length === 0 || (
+                                <button
+                                    onClick={removeStack}
+                                    className="w-full cursor-pointer py-2 rounded-lg border border-red-200 text-red-500 text-sm font-medium hover:bg-red-50 transition"
+                                >
+                                    Remove All
+                                </button>
+                            )
+
+                            }
+                        </div>
                     </div>
-                    {/* {
-                        selectedStack.map(tech => <StackSidebar key={tech.id} tech={tech}></StackSidebar>)
-                    } */}
                 </div>
             </div>
         </section>
