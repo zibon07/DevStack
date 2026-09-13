@@ -1,4 +1,5 @@
 
+import { ToastContainer } from 'react-toastify'
 import './App.css'
 import Footer from './Components/Footer'
 import Hero from './Components/Hero'
@@ -14,6 +15,7 @@ function App() {
       <Hero></Hero>
       <TechnologySection></TechnologySection>
       <Footer></Footer>
+      <ToastContainer position="bottom-right" autoClose={2000} newestOnTop />
     </>
   )
 }

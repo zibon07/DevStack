@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import StackSidebar from "./StackSidebar";
 import TechCard from "./TechCard";
+import { toast } from "react-toastify";
 
 const TechnologySection = () => {
 
@@ -18,7 +19,7 @@ const TechnologySection = () => {
     }, [])
 
 
-    if (loading) return <div>loading.......</div>
+    if (loading) return <span className="loading loading-bars loading-xl"></span>
 
 
     // console.log(selectedStack);
@@ -34,13 +35,22 @@ const TechnologySection = () => {
             alert("this tech already exist")
             return
         }
+        toast.success(`${tech.name} is added successfully`)
         setSelectedStack([...selectedStack, tech])
     }
     const removeFromStack = (id) => {
-    setSelectedStack(selectedStack.filter(t => t.id !== id));
-};
 
-    const removeStack =()=>setSelectedStack([])
+        setSelectedStack(selectedStack.filter(t =>t.id !== id));
+         toast.warning(`${id} removed from stack`);
+
+    };
+
+    const removeStack = () => {
+        toast.warning(`All Stack removed`);
+        setSelectedStack([])
+        
+    }
+    
 
     return (
         <section className="max-w-300 mx-auto">
