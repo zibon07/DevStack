@@ -2,7 +2,7 @@ export default function StackSidebar({ stack, removeFromStack }) {
     // console.log(stack)
     return (
 
-        <div className="flex items-center justify-between bg-white border border-gray-100 w-65 rounded-lg px-3 py-2 shadow-sm">
+        <div className="flex flex-1 md:w-65 items-center justify-between bg-white border border-gray-100  rounded-lg px-3 py-2 shadow-sm">
             <div className="flex items-center gap-3">
                 <img src={stack.icon} alt={stack.name} className="w-8 h-8" />
                 <div>

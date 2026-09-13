@@ -32,7 +32,7 @@ const TechnologySection = () => {
         const existedTech = selectedStack.find(item => item.id === tech.id)
         // console.log(existedTech);
         if (existedTech) {
-            alert("this tech already exist")
+            toast.warning("this tech already exist")
             return
         }
         toast.success(`${tech.name} is added successfully`)
@@ -40,20 +40,20 @@ const TechnologySection = () => {
     }
     const removeFromStack = (id) => {
 
-        setSelectedStack(selectedStack.filter(t =>t.id !== id));
-         toast.warning(`${id} removed from stack`);
+        setSelectedStack(selectedStack.filter(t => t.id !== id));
+        toast.warning(`${id} removed from stack`);
 
     };
 
     const removeStack = () => {
         toast.warning(`All Stack removed`);
         setSelectedStack([])
-        
+
     }
-    
+
 
     return (
-        <section className="max-w-300 mx-auto">
+        <section className="max-w-300  mx-auto">
             <div className=" mx-auto mb-10">
                 <h2 className="text-3xl font-extrabold text-gray-900">
                     Explore the{" "}
@@ -65,8 +65,8 @@ const TechnologySection = () => {
                     Pick a technology per category to build your ideal stack.
                 </p>
             </div>
-            <div className="flex flex-col md:flex-row  gap-6">
-                <div className="grid grid-cols  md:grid-cols-2 lg:grid-cols-3 gap-4 flex-1">
+            <div className="flex  flex-col md:flex-row gap-6">
+                <div className="grid mx-auto grid-cols md:grid-cols-2 lg:grid-cols-3 gap-4 flex-1">
                     {
                         stack.map(tech => <TechCard
                             key={tech.id}
@@ -82,7 +82,7 @@ const TechnologySection = () => {
 
                         <p className="tex-sm text-gray-600 mb-5"><span className="text-pink-600 font-bold">{selectedStack.length}</span> technology selected</p>
 
-                        <div className="space-y-4">
+                        <div className="space-y-6">
                             {selectedStack.length == 0 ? (
                                 <div className="flex flex-col items-center justify-center text-center py-10 text-gray-400">
                                     <span className="text-2xl mb-2">+</span>
