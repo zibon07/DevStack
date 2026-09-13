@@ -58,3 +58,10 @@ Conditional rendering means showing different UI depending on a condition. Examp
 
 **7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?**
 Parent → child: pass data as props (e.g. `<TechCard tech={tech} />`). Child → parent: the parent passes a function down as a prop, and the child calls that function (e.g. `onAdd(tech)`), which runs the parent's state update.
+<<<<<<< HEAD
+=======
+
+
+-git repository: [project-repo](https://github.com/zibon07/DevStack.git)
+-project livelink: [project-livelink](https://zibons-devstack.netlify.app/)
+

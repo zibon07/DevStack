@@ -10,7 +10,7 @@ const TechnologySection = () => {
     const [selectedStack, setSelectedStack] = useState([])
 
     useEffect(() => {
-        fetch("../../public/TechStack.json")
+        fetch("./TechStack.json")
             .then(res => res.json())
             .then(data => {
                 setStack(data)
