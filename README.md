@@ -7,6 +7,8 @@ A React app that lets developers browse curated tools and technologies, then bui
 - React
 - Tailwind CSS
 - React Toastify
+- daisy UI
+- reat toastify
 
 ## ✨ Features
 
