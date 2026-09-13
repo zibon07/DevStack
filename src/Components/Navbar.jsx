@@ -1,7 +1,7 @@
 import logo from "../assets/logo-text.png"
 const Navbar = () => {
     return (
-        <div className="max-w-[1200px] mx-auto">
+        <div className="max-w-300 mx-auto">
             <div className="navbar bg-base-100 shadow-sm">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -11,11 +11,11 @@ const Navbar = () => {
                         <ul
                             tabIndex={-1}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <li><a>Home</a></li>
-                            <li><a>Technologies</a></li>
-                            <li><a>Projects</a></li>
-                            <li><a>About</a></li>
-                            <li><a>Contact</a></li>
+                            <li className="hover:text-pink-600"><a>Home</a></li>
+                            <li className="hover:text-pink-600"><a>Technologies</a></li>
+                            <li className="hover:text-pink-600"><a>Projects</a></li>
+                            <li className="hover:text-pink-600"><a>About</a></li>
+                            <li className="hover:text-pink-600"><a>Contact</a></li>
 
                         </ul>
                     </div>
