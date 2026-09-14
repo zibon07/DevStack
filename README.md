@@ -61,5 +61,3 @@ Parent â†’ child: pass data as props (e.g. `<TechCard tech={tech} />`). Child â†
 
 
 
-
-
